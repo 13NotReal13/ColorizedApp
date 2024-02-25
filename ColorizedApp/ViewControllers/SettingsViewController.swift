@@ -51,10 +51,12 @@ final class SettingsViewController: UIViewController {
             setValueForLabels(blueLabel)
             setValueForTextFields(blueTextField)
         }
+        
+        setColor()
     }
     
     @IBAction func doneButtonAction() {
-        delegate.setColor(viewColor)
+        delegate.setColor(colorView.backgroundColor ?? .white)
         dismiss(animated: true)
     }
     
@@ -62,6 +64,15 @@ final class SettingsViewController: UIViewController {
 
 // MARK: - Private Methods
 private extension SettingsViewController {
+    func setColor() {
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
+    }
+    
     func setValueForSliders(_ sliders: UISlider...) {
         let ciColor = CIColor(color: viewColor)
         
