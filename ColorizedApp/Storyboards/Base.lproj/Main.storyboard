@@ -155,6 +155,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Done">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="doneButtonAction" destination="jWK-Ol-icJ" eventType="touchUpInside" id="mku-Vg-eJN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5XR-Cb-Hd5"/>

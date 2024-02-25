@@ -38,6 +38,12 @@ class SettingsViewController: UIViewController {
         setValueForLabels(redLabel, greenLabel, blueLabel)
         setValueForTextFields(redTextField, greenTextField, blueTextField)
     }
+    
+    @IBAction func doneButtonAction() {
+        delegate.setColor(viewColor)
+        dismiss(animated: true)
+    }
+    
 }
 
 // MARK: - Private Methods
