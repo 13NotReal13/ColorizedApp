@@ -122,8 +122,8 @@ private extension SettingsViewController {
     
     func showAlert(textField: UITextField? = nil) {
         let alert = UIAlertController(
-            title: "Invalid value!",
-            message: "Please, enter valid value.",
+            title: "Wrong format!",
+            message: "Please, enter correct value.",
             preferredStyle: .alert
         )
         let okButton = UIAlertAction(title: "OK", style: .default) { _ in
