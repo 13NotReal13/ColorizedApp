@@ -170,6 +170,15 @@
                             <constraint firstItem="Kbb-po-tOI" firstAttribute="leading" secondItem="5XR-Cb-Hd5" secondAttribute="leading" constant="16" id="vp2-TH-Hpl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueLabel" destination="ha6-eO-WV5" id="SMD-qf-j7U"/>
+                        <outlet property="blueTextField" destination="61B-sn-VYg" id="hCP-Ul-kdk"/>
+                        <outlet property="colorView" destination="fuJ-Uv-b1U" id="dGw-um-lQ5"/>
+                        <outlet property="greenLabel" destination="WDp-yc-05x" id="zJG-Qi-7vI"/>
+                        <outlet property="greenTextField" destination="0LF-9S-t0s" id="Erc-VH-Wzd"/>
+                        <outlet property="redLabel" destination="ad7-5F-maU" id="KGO-AL-dGW"/>
+                        <outlet property="redTextField" destination="IiT-Gr-ZdN" id="raP-5a-Yp8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LP-tb-9U5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
