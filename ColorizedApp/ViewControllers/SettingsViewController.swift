@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet var colorView: UIView!
@@ -37,6 +37,20 @@ class SettingsViewController: UIViewController {
         setValueForSliders(redSlider, greenSlider, blueSlider)
         setValueForLabels(redLabel, greenLabel, blueLabel)
         setValueForTextFields(redTextField, greenTextField, blueTextField)
+    }
+    
+    @IBAction func slidersAction(_ sender: UISlider) {
+        switch sender {
+        case redSlider:
+            setValueForLabels(redLabel)
+            setValueForTextFields(redTextField)
+        case greenSlider:
+            setValueForLabels(greenLabel)
+            setValueForTextFields(greenTextField)
+        default:
+            setValueForLabels(blueLabel)
+            setValueForTextFields(blueTextField)
+        }
     }
     
     @IBAction func doneButtonAction() {
