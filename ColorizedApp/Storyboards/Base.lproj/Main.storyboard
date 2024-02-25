@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="WYp-mt-aQR">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="xI4-LM-kTa">
@@ -41,7 +41,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuJ-Uv-b1U">
                                 <rect key="frame" x="16" y="40" width="361" height="137"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fuJ-Uv-b1U" secondAttribute="height" multiplier="361:137" id="f2z-CI-UBa"/>
                                 </constraints>
@@ -122,16 +122,22 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IiT-Gr-ZdN">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="34"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0LF-9S-t0s">
                                                 <rect key="frame" x="0.0" y="44" width="50" height="34"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="61B-sn-VYg">
                                                 <rect key="frame" x="0.0" y="88" width="50" height="34"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -142,15 +148,25 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAy-Op-Duz">
+                                <rect key="frame" x="159" y="641.66666666666663" width="75" height="40.333333333333371"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5XR-Cb-Hd5"/>
                         <color key="backgroundColor" red="0.067643669089999997" green="0.31385024480000001" blue="0.6814827967" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="FAy-Op-Duz" firstAttribute="centerX" secondItem="umv-HL-DoX" secondAttribute="centerX" id="B3Q-MC-4gK"/>
                             <constraint firstItem="5XR-Cb-Hd5" firstAttribute="trailing" secondItem="fuJ-Uv-b1U" secondAttribute="trailing" constant="16" id="Fqh-9k-dTC"/>
                             <constraint firstItem="fuJ-Uv-b1U" firstAttribute="leading" secondItem="5XR-Cb-Hd5" secondAttribute="leading" constant="16" id="a8e-21-0df"/>
                             <constraint firstItem="Kbb-po-tOI" firstAttribute="top" secondItem="fuJ-Uv-b1U" secondAttribute="bottom" constant="40" id="fbq-SM-poF"/>
                             <constraint firstItem="fuJ-Uv-b1U" firstAttribute="top" secondItem="5XR-Cb-Hd5" secondAttribute="top" constant="40" id="iOH-O6-4rs"/>
                             <constraint firstItem="5XR-Cb-Hd5" firstAttribute="trailing" secondItem="Kbb-po-tOI" secondAttribute="trailing" constant="16" id="kJ5-Lq-8Kn"/>
+                            <constraint firstItem="5XR-Cb-Hd5" firstAttribute="bottom" secondItem="FAy-Op-Duz" secondAttribute="bottom" constant="170" id="t6n-kr-Dz7"/>
                             <constraint firstItem="Kbb-po-tOI" firstAttribute="leading" secondItem="5XR-Cb-Hd5" secondAttribute="leading" constant="16" id="vp2-TH-Hpl"/>
                         </constraints>
                     </view>
@@ -181,9 +197,6 @@
     <color key="tintColor" systemColor="tintColor"/>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
