@@ -39,6 +39,11 @@ final class SettingsViewController: UIViewController {
         setValueForTextFields(redTextField, greenTextField, blueTextField)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     @IBAction func slidersAction(_ sender: UISlider) {
         switch sender {
         case redSlider:
@@ -107,5 +112,17 @@ private extension SettingsViewController {
     
     func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(
+            title: "Invalid value!",
+            message: "Please, enter valid value.",
+            preferredStyle: .alert
+        )
+        let okButton = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okButton)
+        
+        present(alert, animated: true)
     }
 }
