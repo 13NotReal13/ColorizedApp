@@ -19,6 +19,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
+    unowned var delegate: SettingsViewControllerDelegate!
+    var viewColor: UIColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
