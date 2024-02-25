@@ -18,7 +18,6 @@ final class MainViewController: UIViewController {
         settingsVC?.delegate = self
         settingsVC?.viewColor = view.backgroundColor
     }
-
 }
 
 extension MainViewController: SettingsViewControllerDelegate {

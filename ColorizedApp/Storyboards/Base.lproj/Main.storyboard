@@ -172,11 +172,14 @@
                     </view>
                     <connections>
                         <outlet property="blueLabel" destination="ha6-eO-WV5" id="SMD-qf-j7U"/>
+                        <outlet property="blueSlider" destination="Gcc-tB-xrp" id="vgl-x2-fx4"/>
                         <outlet property="blueTextField" destination="61B-sn-VYg" id="hCP-Ul-kdk"/>
                         <outlet property="colorView" destination="fuJ-Uv-b1U" id="dGw-um-lQ5"/>
                         <outlet property="greenLabel" destination="WDp-yc-05x" id="zJG-Qi-7vI"/>
+                        <outlet property="greenSlider" destination="kfL-y3-XM1" id="1Vu-Ya-NC0"/>
                         <outlet property="greenTextField" destination="0LF-9S-t0s" id="Erc-VH-Wzd"/>
                         <outlet property="redLabel" destination="ad7-5F-maU" id="KGO-AL-dGW"/>
+                        <outlet property="redSlider" destination="fZw-bd-maI" id="dLa-IU-WmJ"/>
                         <outlet property="redTextField" destination="IiT-Gr-ZdN" id="raP-5a-Yp8"/>
                     </connections>
                 </viewController>
