@@ -29,10 +29,15 @@ final class SettingsViewController: UIViewController {
     unowned var delegate: SettingsViewControllerDelegate!
     var viewColor: UIColor!
     
+    // MARK: - View Life Circle
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 15
         colorView.backgroundColor = viewColor
+        
+        redTextField.delegate = self
+        greenTextField.delegate = self
+        blueTextField.delegate = self
         
         setValueForSliders(redSlider, greenSlider, blueSlider)
         setValueForLabels(redLabel, greenLabel, blueLabel)
@@ -44,6 +49,7 @@ final class SettingsViewController: UIViewController {
         view.endEditing(true)
     }
     
+    // MARK: - IBActions
     @IBAction func slidersAction(_ sender: UISlider) {
         switch sender {
         case redSlider:
@@ -114,15 +120,77 @@ private extension SettingsViewController {
         String(format: "%.2f", slider.value)
     }
     
-    func showAlert() {
+    func showAlert(textField: UITextField? = nil) {
         let alert = UIAlertController(
             title: "Invalid value!",
             message: "Please, enter valid value.",
             preferredStyle: .alert
         )
-        let okButton = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okButton)
+        let okButton = UIAlertAction(title: "OK", style: .default) { _ in
+            switch textField {
+            case self.redTextField:
+                self.redTextField.text = self.redLabel.text
+            case self.greenTextField:
+                self.greenTextField.text = self.greenLabel.text
+            default:
+                self.blueTextField.text = self.blueLabel.text
+            }
+            textField?.becomeFirstResponder()
+        }
         
+        alert.addAction(okButton)
         present(alert, animated: true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text, text.count <= 4 else {
+            showAlert(textField: textField)
+            return
+        }
+        
+        guard let floatValue = Float(text), floatValue <= 1.00 else {
+            showAlert(textField: textField)
+            return
+        }
+        
+        switch textField {
+        case redTextField:
+            redSlider.setValue(floatValue, animated: true)
+            setValueForLabels(redLabel)
+            redTextField.text = String(format: "%.2f", floatValue)
+        case greenTextField:
+            greenSlider.setValue(floatValue, animated: true)
+            setValueForLabels(greenLabel)
+            greenTextField.text = String(format: "%.2f", floatValue)
+        default:
+            blueSlider.setValue(floatValue, animated: true)
+            setValueForLabels(blueLabel)
+            blueTextField.text = String(format: "%.2f", floatValue)
+        }
+        
+        setColor()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        textField.inputAccessoryView = keyboardToolbar
+        
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: textField,
+            action: #selector(resignFirstResponder)
+        )
+        
+        let flexBarButton = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil,
+            action: nil
+        )
+        
+        keyboardToolbar.items = [flexBarButton, doneButton]
     }
 }
